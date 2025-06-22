@@ -1,0 +1,5 @@
+[Context]
+sockets=inherit-wayland-socket;gpg-agent;cups;pcsc;ssh-auth;system-bus;session-bus
+devices=all;shm;kvm;input
+features=per-app-dev-shm;canbus;bluetooth;multiarch;devel
+filesystems=host-etc;host-os;host
