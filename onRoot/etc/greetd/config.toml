@@ -6,7 +6,7 @@ name = "luka"
 remember = true
 
 [default_session]
-command = "cage -m last gtkgreet"
+command = "agreety --cmd Hyprland"
 user = "luka"
 
 [initial_session]

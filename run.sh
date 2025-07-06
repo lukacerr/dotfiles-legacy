@@ -14,8 +14,8 @@ toInstall=(
 	"ufw" # Comment if router
 	"opi" "git" # "kernel-longterm" just in case?
 	"fwupd" "cpupower" "Mesa" "Mesa-dri" "Mesa-gallium" "tzselect"
-	"alacritty" "fish" "starship" "atuin"
-	"greetd" "gtkgreet" "cage"
+	"alacritty" "fish" "starship"
+	"greetd" # "gtkgreet" "cage"
 	"xdg-utils" "xdg-user-dirs"
 	"playerctl" "brightnessctl" "upower" "btop" "gdu" "fzf" "eza" "fastfetch"
 	"hyprland" "hyprland-qtutils" "hyprcursor" "hyprpaper" "hyprlock" "hypridle"
@@ -31,8 +31,8 @@ toInstall=(
 	"nwg-look" "kvantum-qt6" "kvantum-manager" "qt6ct"
 	"libreoffice-calc" "libreoffice-writer" "libreoffice-gtk3"
 
-	"git-cola" "docker" "docker-compose"
-	"pnpm" "rustup" "python3" "uv" "commons-compiler-jdk"
+	"docker" "docker-compose"
+	# "pnpm" "rustup" "python3" "uv" "commons-compiler-jdk"
 
 	"thunar" "mpv" "grim" "slurp" "swappy"
 
@@ -52,10 +52,7 @@ toInstallFlatpak=(
 )
 
 # From OBS/External repos, via OPI
-toInstallOpi=(
-	"codecs"
-	"vscode"
-)
+toInstallOpi=("codecs")
 
 # To run post-installation
 PostInstallScripts()
@@ -68,12 +65,12 @@ PostInstallScripts()
 
 	# Terminal config
 	sudo chsh -s $(which fish) luka
-	starship preset no-nerd-font -o ~/.config/starship.toml
+	# starship preset no-nerd-font -o ~/.config/starship.toml
 
 	# Enable ufw firewall
 	sudo ufw default deny incoming
 	sudo ufw default allow outgoing
-	sudo ufw enable
+	# sudo ufw enable
 
 	# Add user to groups
 	sudo usermod -aG docker $USER
